@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function Register() {
+function Login() {
   const [formData, setFormData] = useState({
     firstname: '',
     lastname: '',
@@ -14,17 +14,22 @@ function Register() {
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
+  const [records, setRecords] = useState([])
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    setRecords([...records, formData]);
+    
     // Handle form submission here
     console.log(formData);
+
     // You can add your logic to submit the form data to the server or perform any other actions here.
   };
 
   return (
     <form className="form" onSubmit={handleSubmit}>
-      <p className="title">Register</p>
-      <p className="message">Signup now and get full access to our app.</p>
+      <p className="title">Register Merchandiser</p>
+      <p className="message">Register new merchandisers to the company.</p>
       <div className="flex">
         <label>
           <input
@@ -96,11 +101,8 @@ function Register() {
         Submit
       </button>
 
-      <p className="signin">
-        Already have an account? <a href="./login">Sign in</a>
-      </p>
     </form>
   );
 }
 
-export default Register;
+export default Login;

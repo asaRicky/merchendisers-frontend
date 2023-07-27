@@ -1,17 +1,19 @@
 import React from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
-// import Home from './components/Home';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Footer from './components/Footer';
-import Register from './components/pages/Register';
+import Mechants from './components/pages/Mechants';
+import Manager from './components/pages/Manager';
+
 
 function App() {
   return (
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/register" element={<Register/>}/>
+        <Route path="/manager" element={<Manager />}/>
+        <Route path="/merchants" element={<Mechants/>}/>
       </Routes>
 
       <Footer />

@@ -15,12 +15,6 @@ const Navbar = () => {
         <NavLink to="/merchants " activeClassName="active-link">
             Merchants
         </NavLink>
-        <NavLink to="/routes " activeClassName="active-link">
-            Routes
-        </NavLink>
-        <NavLink to="/register" activeClassName="active-link">
-          Register
-        </NavLink>
       </div>
     </nav>
   );
