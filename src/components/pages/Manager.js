@@ -41,9 +41,7 @@ function Manager() {
   };
 // Function to fetch employees' data from the server
 useEffect(() => {
-  // Code to fetch employees' data from the backend API goes here
-  // Upon successful retrieval, update the employees state with the data
-  // For example:
+  // remeber to put the right backend api
   fetch('/api/getEmployees')
     .then((response) => response.json())
     .then((data) => setEmployees(data))
@@ -103,7 +101,6 @@ useEffect(() => {
               <div key={employee.id}>
                 <p>Name: {employee.firstname} {employee.lastname}</p>
                 <p>Email: {employee.email}</p>
-                {/* Display other employee details */}
               </div>
             ))}
           </div>
