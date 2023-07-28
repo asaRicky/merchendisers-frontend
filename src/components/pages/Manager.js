@@ -1,5 +1,6 @@
 import React from 'react';
 import Login from '../Login';
+import Merchant from './Mechants';
 
 function Manager() {
   // State variables to manage manager's authentication and user role
@@ -47,6 +48,34 @@ useEffect(() => {
     .then((data) => setEmployees(data))
     .catch((error) => console.error('Error fetching employees:', error));
 }, []);
+
+  // State variable to store route plan details
+  const [routePlan, setRoutePlan] = useState({
+    merchantName: '',
+    date: '',
+    locations: '',
+    // Add other fields for the route plan as needed
+  });
+
+  // Function to handle route plan submission
+  const handleRoutePlanSubmission = (e) => {
+    e.preventDefault();
+    // Code to send a request to the backend to add the new route plan goes here
+    // For example:
+    fetch('/api/addRoutePlan', {
+      method: 'POST',
+      body: JSON.stringify(routePlan),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        // Handle success or show a success message
+        console.log('Route plan submitted successfully:', data);
+      })
+      .catch((error) => console.error('Error adding route plan:', error));
+  };
 
 
   return (
