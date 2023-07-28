@@ -25,7 +25,7 @@ function Manager() {
   const handleAddMerchant = (e) => {
     e.preventDefault();
     // Code to send a request to the backend to add the new merchant goes here
-    // For example:
+    // CorRECT THE API 
     fetch('/api/addMerchant', {
       method: 'POST',
       body: JSON.stringify(newMerchant),
@@ -42,7 +42,7 @@ function Manager() {
   };
 // Function to fetch employees' data from the server
 useEffect(() => {
-  // remeber to put the right backend api
+  // remember to put the right backend api
   fetch('/api/getEmployees')
     .then((response) => response.json())
     .then((data) => setEmployees(data))
@@ -61,7 +61,7 @@ useEffect(() => {
   const handleRoutePlanSubmission = (e) => {
     e.preventDefault();
     // Code to send a request to the backend to add the new route plan goes here
-    // For example:
+    // REMEMBER TO PUT THE CORRECT API
     fetch('/api/addRoutePlan', {
       method: 'POST',
       body: JSON.stringify(routePlan),
@@ -138,10 +138,8 @@ useEffect(() => {
           <Merchant />
         </div>
       )}
-       {/* If the manager is logged in, show manager-specific UI */}
-       {isLoggedIn && userRole === 'manager' && (
         <div>
-          {/* ... (existing code) */}
+    
           <h2>Add Route Plan</h2>
           <form onSubmit={handleRoutePlanSubmission}>
             <label>
@@ -176,7 +174,7 @@ useEffect(() => {
             <button type="submit">Submit Route Plan</button>
           </form>
         </div>
-      )}
+     
     </div>
   )
 }
