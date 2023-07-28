@@ -39,6 +39,16 @@ function Manager() {
       })
       .catch((error) => console.error('Error adding merchant:', error));
   };
+// Function to fetch employees' data from the server
+useEffect(() => {
+  // Code to fetch employees' data from the backend API goes here
+  // Upon successful retrieval, update the employees state with the data
+  // For example:
+  fetch('/api/getEmployees')
+    .then((response) => response.json())
+    .then((data) => setEmployees(data))
+    .catch((error) => console.error('Error fetching employees:', error));
+}, []);
 
 
   return (
