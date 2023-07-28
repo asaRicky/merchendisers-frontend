@@ -53,7 +53,65 @@ useEffect(() => {
 
   return (
     <div>
-        <Login />
+        {/* <Login /> */}
+ {/* If the manager is not logged in, show the Login component */}
+ {!isLoggedIn && <Login onLogin={handleLogin} />}
+
+{/* If the manager is logged in, show manager-specific UI */}
+{isLoggedIn && userRole === 'manager' && (
+  <div>
+    <h2>Register Merchant</h2>
+    <form onSubmit={handleAddMerchant}>
+      <label>
+        Firstname:
+        <input
+          type="text"
+          value={newMerchant.firstname}
+          onChange={(e) =>
+            setNewMerchant({ ...newMerchant, firstname: e.target.value })
+          }
+        />
+            </label>
+            <label>
+              Lastname:
+              <input
+                type="text"
+                value={newMerchant.lastname}
+                onChange={(e) =>
+                  setNewMerchant({ ...newMerchant, lastname: e.target.value })
+                }
+              />
+            </label>
+            <label>
+              Email:
+              <input
+                type="email"
+                value={newMerchant.email}
+                onChange={(e) =>
+                  setNewMerchant({ ...newMerchant, email: e.target.value })
+                }
+              />
+            </label>
+            <button type="submit">Add Merchant</button>
+          </form>
+          {successMessage && <p>{successMessage}</p>}
+
+          {/* Display employees' details */}
+          <div>
+            <h2>Employees Details</h2>
+            {employees.map((employee) => (
+              <div key={employee.id}>
+                <p>Name: {employee.firstname} {employee.lastname}</p>
+                <p>Email: {employee.email}</p>
+                {/* Display other employee details */}
+              </div>
+            ))}
+          </div>
+
+          {/* Show Merchant component to display individual merchant details */}
+          <Merchant />
+        </div>
+      )}
     </div>
   )
 }
