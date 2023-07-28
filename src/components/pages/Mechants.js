@@ -65,7 +65,7 @@ function Merchant() {
           {/* Render plan details here */}
         </div>
       ))}
-
+      
       <h2>Check-in/Check-out</h2>
       {!checkedIn ? (
         <>

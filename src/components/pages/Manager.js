@@ -62,7 +62,7 @@ useEffect(() => {
     e.preventDefault();
     // Code to send a request to the backend to add the new route plan goes here
     // REMEMBER TO PUT THE CORRECT API
-    fetch('/api/addRoutePlan', {
+    fetch('/api/addroute-plans', {
       method: 'POST',
       body: JSON.stringify(routePlan),
       headers: {
