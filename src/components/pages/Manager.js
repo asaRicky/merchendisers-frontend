@@ -138,6 +138,45 @@ useEffect(() => {
           <Merchant />
         </div>
       )}
+       {/* If the manager is logged in, show manager-specific UI */}
+       {isLoggedIn && userRole === 'manager' && (
+        <div>
+          {/* ... (existing code) */}
+          <h2>Add Route Plan</h2>
+          <form onSubmit={handleRoutePlanSubmission}>
+            <label>
+              Merchant Name:
+              <input
+                type="text"
+                value={routePlan.merchantName}
+                onChange={(e) =>
+                  setRoutePlan({ ...routePlan, merchantName: e.target.value })
+                }
+              />
+            </label>
+            <label>
+              Date:
+              <input
+                type="date"
+                value={routePlan.date}
+                onChange={(e) =>
+                  setRoutePlan({ ...routePlan, date: e.target.value })
+                }
+              />
+            </label>
+            <label>
+              Locations:
+              <textarea
+                value={routePlan.locations}
+                onChange={(e) =>
+                  setRoutePlan({ ...routePlan, locations: e.target.value })
+                }
+              />
+            </label>
+            <button type="submit">Submit Route Plan</button>
+          </form>
+        </div>
+      )}
     </div>
   )
 }
