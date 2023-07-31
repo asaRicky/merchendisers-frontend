@@ -19,7 +19,12 @@ const LandingPage = () => {
                 <li>
                   <a href="/" title="Home">Home</a>
                 </li>
-                {/* Rest of the menu items */}
+                <li>
+                  <a href="/about" title="About">About</a>
+                </li>
+                <li>
+                  <a href="/contact" title="Contact">Contact</a>
+                </li>
               </ul>
             </nav>
           </div>
