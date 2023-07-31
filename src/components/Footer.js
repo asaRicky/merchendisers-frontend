@@ -9,6 +9,13 @@ const Footer = () => {
         <p>Phone: +254 7888889999</p>
         <p>Address: ngong-lane, Nairobi, Kenya</p>
       </div>
+      <div className="contact-info">
+        <h4>Merch Solution</h4>
+        <p>Route Planning Software</p>
+        <p>Technical Support</p>
+        <p>GPS Tracking Software</p>
+        <p>Route Distance Calculator</p>
+      </div>
       <div className="company-info">
         <h4>Company Details</h4>
         <p>Merch Limited</p>
