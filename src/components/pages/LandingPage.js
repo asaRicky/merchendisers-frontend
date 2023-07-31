@@ -30,8 +30,15 @@ const LandingPage = () => {
           </div>
         </div> </header>
       <section className="banner-area">
-        {/* Rest of the banner area content */}
-      </section>
+      <div className="banner-content">
+        <h1>White Label Merch Management Software</h1>
+        <p>
+          One software that covers your merch operations entirely. Expect a lot more
+          beyond tracking with our advanced Merch Monitoring Solutions.
+        </p>
+        <a href="#" className="primaryBtn">Schedule a Demo</a>
+      </div>
+    </section>
       <section className="videoRow">
         {/* Rest of the videoRow content */}
       </section>
