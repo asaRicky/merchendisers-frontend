@@ -43,7 +43,23 @@ const LandingPage = () => {
         {/* Rest of the videoRow content */}
       </section>
       <section className="tracking-solution">
-        {/* Rest of the tracking-solution content */}
+      <div className="container">
+        <div className="headingRow">
+          <h4 className="text-gradient">What MerchTracker Offers</h4>
+          <h2>Beyond Merch Management Solutions</h2>
+        </div>
+        <div className="row">
+          <div className="tracking-left">
+            <div className="shadow-box">
+              <h3>Video Telematics Solutions</h3>
+              {/* Rest of the content */}
+            </div>
+          </div>
+          <div className="tracking-right">
+            {/* Content for the right side */}
+          </div>
+        </div>
+      </div>
       </section>
     </div>
   );
