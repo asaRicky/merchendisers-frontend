@@ -206,6 +206,26 @@ function Manager() {
   });
   const [successMessage, setSuccessMessage] = useState('');
 
+   // Function to handle adding a new merchant
+  const handleAddMerchant = (e) => {
+    e.preventDefault();
+    // Code to send a request to the backend to add the new merchant goes here
+    // CorRECT THE API 
+    fetch('/api/addMerchant', {
+      method: 'POST',
+      body: JSON.stringify(newMerchant),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+     })
+      .then((response) => response.json())
+      .then((data) => {
+        setSuccessMessage(`Merchant ${data.firstname} has been added successfully.`);
+        setNewMerchant({ firstname: '', lastname: '', email: '' });
+      })
+      .catch((error) => console.error('Error adding merchant:', error));
+  };
+
   // State variable to store the active feature to be displayed
   const [activeFeature, setActiveFeature] = useState('dashboard');
 
