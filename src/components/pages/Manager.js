@@ -193,18 +193,18 @@ import Email from './Email';
 
 function Manager() {
   // ... Your existing state and functions ...
-   // State variables to manage manager's authentication and user role
-//   const [isLoggedIn, setIsLoggedIn] = useState(false);
-//   const [userRole, setUserRole] = useState('');
+  //  State variables to manage manager's authentication and user role
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userRole, setUserRole] = useState('');
 
-//   // State variables to store employees' data and new merchant details
-//   const [employees, setEmployees] = useState([]);
-//   const [newMerchant, setNewMerchant] = useState({
-//     firstname: '',
-//     lastname: '',
-//     email: '',
-//   });
-//   const [successMessage, setSuccessMessage] = useState('');
+  // State variables to store employees' data and new merchant details
+  const [employees, setEmployees] = useState([]);
+  const [newMerchant, setNewMerchant] = useState({
+    firstname: '',
+    lastname: '',
+    email: '',
+  });
+  const [successMessage, setSuccessMessage] = useState('');
 
   // State variable to store the active feature to be displayed
   const [activeFeature, setActiveFeature] = useState('dashboard');
