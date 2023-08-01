@@ -411,4 +411,36 @@ button:hover {
   background-color: rgb(155, 65, 6);
 }
 
+/* Homepage.css */
+.homepage-container {
+  background-image: url('./components/pages/truck-shipment.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff; /* Set text color to white for better visibility on the image */
+  text-align: center; /* Center the text */
+}
+
+.homepage-image {
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.homepage-container h1 {
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.homepage-container p {
+  font-size: 18px;
+  color:white;
 }
