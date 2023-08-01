@@ -1,0 +1,36 @@
+/* Custom CSS for Manager component */
+
+.manager-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f0f0f0; /* Set the background color for the entire page */
+  }
+  
+  /* Container for the dashboard and background */
+  .dashboard-and-background-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1200px; /* Set the maximum width for the content */
+    margin: 0 auto; /* Center the content horizontally */
+    padding: 20px;
+  }
+  
+  /* Container for the dashboard on the right side */
+  .dashboard-container {
+    flex: 0 0 300px; /* Set the width of the dashboard */
+    background-color: #ffffff; /* Set the background color for the dashboard */
+    padding: 20px;
+  }
+  
+  /* Container for the customized background on the left side */
+  .background-container {
+    flex: 1; /* Take the remaining available space */
+    background-color: #f0f0f0; /* Set the background color for the customized background */
+  }
+  
+  /* Add any additional styling for the customized background here */
+  

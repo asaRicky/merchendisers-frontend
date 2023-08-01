@@ -7,6 +7,7 @@ import GPSTracking from './GPSTracking';
 import Settings from './Settings';
 import Attendance from './Attendance';
 import Email from './Email';
+import './Manager.css';
 
 function Manager() {
   // ... Your existing state and functions ...
