@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Login from '../../Login';
 import Merchant from '../Mechants';
 import RoutePlanning from './RoutePlanning';
 import Reports from './Reports';
@@ -13,7 +12,7 @@ function Manager() {
   // ... Your existing state and functions ...
   
  // State variables to store employees' data and new merchant details
-  const [employees, setEmployees] = useState([]);
+  // const [employees, setEmployees] = useState([]);
   const [newMerchant, setNewMerchant] = useState({
     firstname: '',
     lastname: '',
@@ -44,10 +43,10 @@ function Manager() {
   // Function to fetch employees' data from the server
 useEffect(() => {
   // remember to put the right backend api
-  fetch('/api/getEmployees')
+  fetch('/api/getMerchants')
     .then((response) => response.json())
-    .then((data) => setEmployees(data))
-    .catch((error) => console.error('Error fetching employees:', error));
+    .then((data) => setMerchants(data))
+    .catch((error) => console.error('Error fetching merchants:', error));
 }, []);
 
   // State variable to store route plan details
@@ -122,8 +121,7 @@ useEffect(() => {
 
   return (
     <div className="manager-page">
-      {!isLoggedIn && <Login onLogin={handleLogin} />}
-      {isLoggedIn && userRole === 'manager' && (
+     (
         <div className="dashboard-and-background-container">
           <div className="background-container">
             {/* Your customized background elements go here */}
@@ -134,7 +132,7 @@ useEffect(() => {
           {/* Show Merchant component to display individual merchant details */}
           <Merchant />
         </div>
-      )}
+      )
     </div>
   );
 }
