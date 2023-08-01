@@ -1,6 +1,6 @@
-import React from 'react';
-import Login from '../Login';
+import React, {useState, useEffect} from 'react';
 import Merchant from './Mechants';
+import SignUp from '../Signup';
 
 function Manager() {
   // State variables to manage manager's authentication and user role
@@ -82,7 +82,7 @@ useEffect(() => {
     <div>
         {/* <Login /> */}
  {/* If the manager is not logged in, show the Login component */}
- {!isLoggedIn && <Login onLogin={handleLogin} />}
+ {!isLoggedIn && <SignUp onLogin={handleLogin} />}
 
 {/* If the manager is logged in, show manager-specific UI */}
 {isLoggedIn && userRole === 'manager' && (
