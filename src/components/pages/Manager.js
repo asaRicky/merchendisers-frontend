@@ -243,6 +243,27 @@ useEffect(() => {
     // Add other fields for the route plan as needed
   });
 
+    // Function to handle route plan submission
+  const handleRoutePlanSubmission = (e) => {
+    e.preventDefault();
+    // Code to send a request to the backend to add the new route plan goes here
+    // REMEMBER TO PUT THE CORRECT API
+    fetch('/api/addroute-plans', {
+      method: 'POST',
+      body: JSON.stringify(routePlan),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        // Handle success or show a success message
+        console.log('Route plan submitted successfully:', data);
+      })
+      .catch((error) => console.error('Error adding route plan:', error));
+  };
+
+
   // State variable to store the active feature to be displayed
   const [activeFeature, setActiveFeature] = useState('dashboard');
 
