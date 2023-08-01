@@ -406,3 +406,7 @@ button {
 button:hover {
   background-color: #0056b3;
 }
+
+.home {
+  background-color: rgb(155, 65, 6);
+}
