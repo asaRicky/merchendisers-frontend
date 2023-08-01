@@ -11,7 +11,6 @@ const PerformanceChart = ({ weeklyPerformance }) => {
         data: weeklyPerformance.map((weekData) => weekData.completedRoutes),
         backgroundColor: 'rgba(75, 192, 192, 0.6)',
       },
-      // You can add more datasets if needed to display additional data on the chart
     ],
   };
 
