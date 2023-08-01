@@ -410,26 +410,5 @@ button:hover {
 .home {
   background-color: rgb(155, 65, 6);
 }
-/* Homepage.css */
-.homepage-container {
-  text-align: center;
-  padding: 20px;
-}
 
-.homepage-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 20px;
-}
-
-.homepage-container h1 {
-  font-size: 32px;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.homepage-container p {
-  font-size: 18px;
-  color: #555;
 }
