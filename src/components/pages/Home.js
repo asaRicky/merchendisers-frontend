@@ -1,9 +1,16 @@
 import React from 'react';
+import homepageImage from './truck-shipment.jpg';
 
-function Homepage() {
+
+function Home() {
   return (
     <div className="homepage-container">
-      <h1>Welcome to Our Homepage</h1>
+       <img
+        src={homepageImage}
+        alt="Homepage"
+        className="home-page-background-img"
+      />
+
       <p>
       </p>
       {/* Add more content as needed */}
@@ -11,4 +18,4 @@ function Homepage() {
   );
 }
 
-export default Homepage;
+export default Home;

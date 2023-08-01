@@ -7,6 +7,7 @@ import Mechants from './components/pages/Mechants';
 import Manager from './components/pages/Manager';
 import SignUp from './components/pages/Signup';
 import About from './components/pages/About';
+import Contact from './components/pages/Contact';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/manager" element={<Manager />}/>
         <Route path="/merchants" element={<Mechants/>}/>
         <Route path="/signup" element={<SignUp/>}/>
+        <Route path="/contact us" element={<Contact/>}/>
       </Routes>
     </Router>
   );
