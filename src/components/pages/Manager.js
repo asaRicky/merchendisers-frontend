@@ -226,6 +226,23 @@ function Manager() {
       .catch((error) => console.error('Error adding merchant:', error));
   };
 
+  // Function to fetch employees' data from the server
+useEffect(() => {
+  // remember to put the right backend api
+  fetch('/api/getEmployees')
+    .then((response) => response.json())
+    .then((data) => setEmployees(data))
+    .catch((error) => console.error('Error fetching employees:', error));
+}, []);
+
+  // State variable to store route plan details
+  const [routePlan, setRoutePlan] = useState({
+    merchantName: '',
+    date: '',
+    locations: '',
+    // Add other fields for the route plan as needed
+  });
+
   // State variable to store the active feature to be displayed
   const [activeFeature, setActiveFeature] = useState('dashboard');
 
