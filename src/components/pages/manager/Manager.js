@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Login from '../Login';
-import Merchant from './Mechants';
+import Login from '../../Login';
+import Merchant from '../Mechants';
 import RoutePlanning from './RoutePlanning';
 import Reports from './Reports';
 import GPSTracking from './GPSTracking';
