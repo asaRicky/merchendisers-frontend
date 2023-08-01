@@ -62,26 +62,26 @@ const Settings = () => {
   useEffect(() => {
     // Fetch the manager's settings from the backend and update the state
     // For example:
-    // fetch('/api/getSettings')
-    //   .then((response) => response.json())
-    //   .then((data) => setSettings(data))
-    //   .catch((error) => console.error('Error fetching settings:', error));
+    fetch('/api/getSettings')
+      .then((response) => response.json())
+      .then((data) => setSettings(data))
+      .catch((error) => console.error('Error fetching settings:', error));
   }, []);
 
   // Save the manager's settings to the backend whenever there are changes
   useEffect(() => {
     // Save the settings to the backend by calling the API
     // For example:
-    // fetch('/api/saveSettings', {
-    //   method: 'POST',
-    //   body: JSON.stringify(settings),
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    // })
-    //   .then((response) => response.json())
-    //   .then((data) => console.log('Settings saved:', data))
-    //   .catch((error) => console.error('Error saving settings:', error));
+    fetch('/api/saveSettings', {
+      method: 'POST',
+      body: JSON.stringify(settings),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => console.log('Settings saved:', data))
+      .catch((error) => console.error('Error saving settings:', error));
   }, [settings]);
 
   // Handle form submission from the SettingsForm

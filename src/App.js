@@ -4,7 +4,7 @@ import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Footer from './components/Footer';
 import Mechants from './components/pages/Mechants';
-import Manager from './components/pages/Manager';
+import Manager from './components/pages/manager/Manager';
 
 
 function App() {

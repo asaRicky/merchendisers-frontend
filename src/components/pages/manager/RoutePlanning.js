@@ -35,25 +35,25 @@ function RoutePlanning() {
     // You can use a separate API endpoint to handle email sending and provide it with necessary data
     // For demonstration purposes, let's just log the route plan to the console
     // Make an HTTP POST request to the backend API
-  fetch('/api/sendRoutePlanEmail', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(routePlan),
-  })
-    .then((response) => {
-      if (response.ok) {
-        // If the response is successful, the email has been sent successfully
-        console.log('Route plan sent via email:', routePlan);
-      } else {
-        // If the response is not successful, handle the error
-        console.error('Failed to send route plan via email.');
-      }
-    })
-    .catch((error) => {
-      console.error('Error sending route plan via email:', error);
-    });
+  // fetch('/api/sendRoutePlanEmail', {
+  //   method: 'POST',
+  //   headers: {
+  //     'Content-Type': 'application/json',
+  //   },
+  //   body: JSON.stringify(routePlan),
+  // })
+  //   .then((response) => {
+  //     if (response.ok) {
+  //       // If the response is successful, the email has been sent successfully
+  //       console.log('Route plan sent via email:', routePlan);
+  //     } else {
+  //       // If the response is not successful, handle the error
+  //       console.error('Failed to send route plan via email.');
+  //     }
+  //   })
+  //   .catch((error) => {
+  //     console.error('Error sending route plan via email:', error);
+  //   });
     console.log('Sending route plan via email:', routePlan);
   };
 
