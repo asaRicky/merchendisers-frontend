@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './GPSControl.css';
 
 const GPSControl = () => {
     const [isGPSEnabled, setGPSEnabled] = useState(false);
