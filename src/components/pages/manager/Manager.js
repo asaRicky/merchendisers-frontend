@@ -3,100 +3,34 @@ import Merchant from '../Merchants';
 import RoutePlanning from './RoutePlanning';
 import Reports from './Reports';
 import Settings from './Settings';
-import Dashboard from './Dashboard';
+// import Dashboard from './Dashboard';
 // import Attendance from './Attendance';
 import './Manager.css';
 
 function Manager() {
-  // ... Your existing state and functions ...
-  
- // State variables to store employees' data and new merchant details
-  // const [employees, setEmployees] = useState([]);
-  // const [newMerchant, setNewMerchant] = useState({
-  //   firstname: '',
-  //   lastname: '',
-  //   email: '',
-  // });
-  // const [successMessage, setSuccessMessage] = useState('');
-
-   // Function to handle adding a new merchant
-  // const handleAddMerchant = (e) => {
-  //   e.preventDefault();
-  //   // Code to send a request to the backend to add the new merchant goes here
-  //   // CorRECT THE API 
-  //   fetch('/api/addMerchant', {
-  //     method: 'POST',
-  //     body: JSON.stringify(newMerchant),
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //    })
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       setSuccessMessage(`Merchant ${data.firstname} has been added successfully.`);
-  //       setNewMerchant({ firstname: '', lastname: '', email: '' });
-  //     })
-  //     .catch((error) => console.error('Error adding merchant:', error));
-  // };
-
-  // Function to fetch employees' data from the server
-// useEffect(() => {
-//   // remember to put the right backend api
-//   fetch('/api/getMerchants')
-//     .then((response) => response.json())
-//     .then((data) => setMerchants(data))
-//     .catch((error) => console.error('Error fetching merchants:', error));
-// }, []);
-
-  // // State variable to store route plan details
-  // const [routePlan, setRoutePlan] = useState({
-  //   merchantName: '',
-  //   date: '',
-  //   locations: '',
-  //   // Add other fields for the route plan as needed
-  // });
-
-  //   // Function to handle route plan submission
-  // const handleRoutePlanSubmission = (e) => {
-  //   e.preventDefault();
-  //   // Code to send a request to the backend to add the new route plan goes here
-  //   // REMEMBER TO PUT THE CORRECT API
-  //   fetch('/api/addroute-plans', {
-  //     method: 'POST',
-  //     body: JSON.stringify(routePlan),
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //   })
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       // Handle success or show a success message
-  //       console.log('Route plan submitted successfully:', data);
-  //     })
-  //     .catch((error) => console.error('Error adding route plan:', error));
-  // };
-
+ 
 
   // // State variable to store the active feature to be displayed
   const [activeFeature, setActiveFeature] = useState('dashboard');
-  const [backgroundImageIndex, setBackgroundImageIndex] = useState(0);
+  // const [backgroundImageIndex, setBackgroundImageIndex] = useState(0);
 
   // Array of report images (replace with your actual report images)
-  const reportImages = [
-    'report_image_1.jpg',
-    'report_image_2.jpg',
-    'report_image_3.jpg',
-    // Add more report images here
-  ];
+  // const reportImages = [
+  //   'report_image_1.jpg',
+  //   'report_image_2.jpg',
+  //   'report_image_3.jpg',
+  //   // Add more report images here
+  // ];
 
   // Function to change the background image every 10 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setBackgroundImageIndex((prevIndex) => (prevIndex + 1) % reportImages.length);
-    }, 10000);
-
-    return () => clearInterval(interval);
-  }, []);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setBackgroundImageIndex((prevIndex) => (prevIndex + 1) % reportImages.length);
+  //   }, 10000);
+  
+  //   return () => clearInterval(interval);
+  // }, [reportImages.length]); // Add reportImages.length as a dependency
+  
   
   // Function to handle feature selection
   const handleFeatureSelect = (feature) => {
@@ -135,12 +69,12 @@ function Manager() {
 
   return (
     <div className="manager-page">
-     (
+    
         <div className="dashboard-and-background-container">
           <div className="background-container"
-             style={{
-              backgroundImage: `url(${reportImages[backgroundImageIndex]})`,
-            }}
+            //  style={{
+            //   backgroundImage: `url(${reportImages[backgroundImageIndex]})`,
+            // }}
           >
             {/* Your customized background elements go here */}
             {/* For example, you can add an image carousel or a weekly reports graph */}
@@ -149,9 +83,9 @@ function Manager() {
           {/* Rest of your manager-specific UI */}
           {/* Show Merchant component to display individual merchant details */}
           <Merchant />
-          <Dashboard />
+          {/* <Dashboard /> */}
         </div>
-      )
+      
     </div>
   );
 }
