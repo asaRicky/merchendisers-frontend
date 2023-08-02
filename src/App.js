@@ -7,6 +7,7 @@ import Merchants from './components/Merchants/Merchants';
 // import Manager from './components/pages/Manager';
 import Login from './components/pages/Login';
 import About from './components/pages/About';
+import Contact from './components/pages/Contact';
 
 
 function App() {
@@ -16,9 +17,16 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/about" element={<About/>}/>
+
         {/* <Route path="/manager" element={<Manager />}/> */}
         <Route path="/merchants" element={<Merchants/>}/>
         <Route path="/login" element={<Login/>}/>
+
+        <Route path="/manager" element={<Manager />}/>
+        <Route path="/merchants" element={<Mechants/>}/>
+        <Route path="/signup" element={<SignUp/>}/>
+        <Route path="/contact us" element={<Contact/>}/>
+
       </Routes>
     </Router>
   );
