@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import PerformanceChart from '../charts/PerformanceChart';
+import PerformanceChart from './charts/PerformanceChart';
 
 const Reports = () => {
   // Fetch and prepare the weeklyPerformance data using useEffect and useState...
