@@ -6,17 +6,17 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-brand">Merch Limited</div>
       <div className="navbar-links">
-        <NavLink to="/home" activeClassName="active-link">
+        <NavLink to="/home" className="active-link">
           Home
         </NavLink>
-        <NavLink to="/about" activeClassName="active-link">
+        <NavLink to="/about" className="active-link">
           About
         </NavLink>
-        <NavLink to="/sign-up" activeClassName="active-link">
-          Signup
+        <NavLink to="/login" className="active-link">
+          Login
         </NavLink>
-        <NavLink to="/services " activeClassName="active-link">
-            Services
+        <NavLink to="/merchants" className="active-link">
+          Merchants
         </NavLink>
       </div>
     </nav>
