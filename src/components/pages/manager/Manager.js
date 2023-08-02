@@ -4,6 +4,7 @@ import RoutePlanning from './RoutePlanning';
 import Reports from './Reports';
 // import GPSTracking from './GPSTracking';
 import Settings from './Settings';
+import Dashboard from './Dashboard';
 // import Attendance from './Attendance';
 // import Email from './Email';
 import './Manager.css';
@@ -131,6 +132,7 @@ function Manager() {
           {/* Rest of your manager-specific UI */}
           {/* Show Merchant component to display individual merchant details */}
           <Merchant />
+          <Dashboard />
         </div>
       )
     </div>

@@ -4,6 +4,7 @@ function RoutePlanning() {
   const [routePlans, setRoutePlans] = useState([]);
   const [merchantName, setMerchantName] = useState('');
   const [date, setDate] = useState('');
+  const [outlets, setOutlets] = useState('');
   // Add other necessary state variables for route plan details
 
   const handleFormSubmit = (e) => {
@@ -12,6 +13,7 @@ function RoutePlanning() {
     const newRoutePlan = {
       merchantName,
       date,
+      outlets,
       // Add other form fields here
     };
 
@@ -21,6 +23,7 @@ function RoutePlanning() {
     // Clear the form fields after submission
     setMerchantName('');
     setDate('');
+    setOutlets('');
     // Clear other form fields here
 
     // Call a function to send the route plan via email to the merchant
@@ -35,25 +38,25 @@ function RoutePlanning() {
     // You can use a separate API endpoint to handle email sending and provide it with necessary data
     // For demonstration purposes, let's just log the route plan to the console
     // Make an HTTP POST request to the backend API
-  // fetch('/api/sendRoutePlanEmail', {
-  //   method: 'POST',
-  //   headers: {
-  //     'Content-Type': 'application/json',
-  //   },
-  //   body: JSON.stringify(routePlan),
-  // })
-  //   .then((response) => {
-  //     if (response.ok) {
-  //       // If the response is successful, the email has been sent successfully
-  //       console.log('Route plan sent via email:', routePlan);
-  //     } else {
-  //       // If the response is not successful, handle the error
-  //       console.error('Failed to send route plan via email.');
-  //     }
-  //   })
-  //   .catch((error) => {
-  //     console.error('Error sending route plan via email:', error);
-  //   });
+    // fetch('/api/sendRoutePlanEmail', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify(routePlan),
+    // })
+    //   .then((response) => {
+    //     if (response.ok) {
+    //       // If the response is successful, the email has been sent successfully
+    //       console.log('Route plan sent via email:', routePlan);
+    //     } else {
+    //       // If the response is not successful, handle the error
+    //       console.error('Failed to send route plan via email.');
+    //     }
+    //   })
+    //   .catch((error) => {
+    //     console.error('Error sending route plan via email:', error);
+    //   });
     console.log('Sending route plan via email:', routePlan);
   };
 
@@ -68,6 +71,10 @@ function RoutePlanning() {
         <label htmlFor="date">Date:</label>
         <input type="date" id="date" value={date} onChange={(e) => setDate(e.target.value)} />
 
+        {/* Add form field for outlets */}
+        <label htmlFor="outlets">Outlets:</label>
+        <input type="text" id="outlets" value={outlets} onChange={(e) => setOutlets(e.target.value)} />
+
         {/* Add other form fields here */}
         
         <button type="submit">Assign Route Plan</button>
@@ -78,7 +85,7 @@ function RoutePlanning() {
       <ul>
         {routePlans.map((routePlan, index) => (
           <li key={index}>
-            Merchant: {routePlan.merchantName}, Date: {routePlan.date}
+            Merchant: {routePlan.merchantName}, Date: {routePlan.date}, Outlets: {routePlan.outlets}
             {/* Display other route plan details here */}
           </li>
         ))}
