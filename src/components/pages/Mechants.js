@@ -4,7 +4,7 @@ function Merchant() {
  
   return (
     <div>
-      
+  
     </div>   
 
   )
