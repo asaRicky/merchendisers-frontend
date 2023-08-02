@@ -1,3 +1,4 @@
+
 import React from 'react';
 import homepageImage from './truck-shipment.jpg';
 
@@ -19,3 +20,4 @@ function Home() {
 }
 
 export default Home;
+

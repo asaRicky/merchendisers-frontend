@@ -15,7 +15,6 @@ function About() {
       <p>
         Welcome to our merchandisers company! We are a dedicated team of professionals committed to providing top-notch merchandising solutions to our clients.
       </p>
-      <Footer/>
       {/* Add more text content as needed */}
     </div>
   );
