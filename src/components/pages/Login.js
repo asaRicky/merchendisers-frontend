@@ -1,7 +1,15 @@
+<<<<<<< HEAD
 import React, { useState } from "react";
 
 function Login({ onLogin }) {
   const [username, setUsername] = useState("");
+=======
+import React, {useState}from "react";
+
+function Login() {
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("")
+>>>>>>> e4f4c63 (adding login component)
   const [password, setPassword] = useState("");
 
   function handleSubmit(e) {
@@ -13,10 +21,15 @@ function Login({ onLogin }) {
       },
       body: JSON.stringify({
         username,
+<<<<<<< HEAD
+=======
+        email,
+>>>>>>> e4f4c63 (adding login component)
         password,
       }),
     })
       .then((r) => r.json())
+<<<<<<< HEAD
       .then(onLogin);
   }
 
@@ -118,3 +131,46 @@ function Login({ onLogin }) {
 }
 
 export default Login;
+=======
+      .then((data) => {
+        // Handle the response data here
+        if (data.success) {
+          // Update state or perform actions for successful login/registration
+        } else {
+          // Update state or show error message for failed login/registration
+        }
+      })
+      .catch((error) => {
+        // Handle any fetch errors here
+      });
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <label htmlFor="username">Username:</label>
+      <input
+        type="text"
+        id="username"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+      />
+       <label htmlFor="email">Email:</label>
+      <input
+        type="text"
+        id="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+      <label htmlFor="password">Password:</label>
+      <input
+        type="password"
+        id="password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />     
+      <button type="submit">Submit</button>
+    </form>
+  );
+}
+export default Login;
+>>>>>>> e4f4c63 (adding login component)

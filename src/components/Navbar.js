@@ -13,7 +13,11 @@ const Navbar = () => {
         <NavLink to="/about " className="active-link">
           About
         </NavLink>
+<<<<<<< HEAD
         <NavLink to="/login" className="active-link">
+=======
+        <NavLink to="/login" activeClassName="active-link">
+>>>>>>> e4f4c63 (adding login component)
           Login
         </NavLink>
         <NavLink to="/merchants" className="active-link">
