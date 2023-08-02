@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Merchant from '../Mechants';
+import Merchant from '../Merchants';
 import RoutePlanning from './RoutePlanning';
 import Reports from './Reports';
 // import GPSTracking from './GPSTracking';
