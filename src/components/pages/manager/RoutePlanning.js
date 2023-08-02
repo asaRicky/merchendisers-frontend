@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import BarChart from './charts/BarChart';
 
 function RoutePlanning() {
   const [routePlans, setRoutePlans] = useState([]);
@@ -30,33 +31,22 @@ function RoutePlanning() {
     sendRoutePlanViaEmail(newRoutePlan);
   };
 
+  const handleRoutePlanUpdate = (selectedDate) => {
+    // Find the route plan with the selected date in the state
+    const updatedRoutePlans = routePlans.map((routePlan) => {
+      if (routePlan.date === selectedDate) {
+        // Update the route plan as needed (e.g., set it as completed)
+        return { ...routePlan, completed: true };
+      } else {
+        return routePlan;
+      }
+    });
+     // Update the state with the updated route plans
+     setRoutePlans(updatedRoutePlans);
+    };
+  
+
   const sendRoutePlanViaEmail = (routePlan) => {
-    // Implement the logic to send the route plan via email to the merchant
-    // You'll need to call a backend API to handle email sending
-    // You can use a library like Nodemailer in the backend for email sending
-    // The backend will need access to merchant email addresses
-    // You can use a separate API endpoint to handle email sending and provide it with necessary data
-    // For demonstration purposes, let's just log the route plan to the console
-    // Make an HTTP POST request to the backend API
-    // fetch('/api/sendRoutePlanEmail', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify(routePlan),
-    // })
-    //   .then((response) => {
-    //     if (response.ok) {
-    //       // If the response is successful, the email has been sent successfully
-    //       console.log('Route plan sent via email:', routePlan);
-    //     } else {
-    //       // If the response is not successful, handle the error
-    //       console.error('Failed to send route plan via email.');
-    //     }
-    //   })
-    //   .catch((error) => {
-    //     console.error('Error sending route plan via email:', error);
-    //   });
     console.log('Sending route plan via email:', routePlan);
   };
 
@@ -82,6 +72,7 @@ function RoutePlanning() {
 
       {/* Display the list of assigned route plans */}
       <h3>Assigned Route Plans:</h3>
+      <BarChart routePlanData={routePlans} onRoutePlanUpdate={handleRoutePlanUpdate} />
       <ul>
         {routePlans.map((routePlan, index) => (
           <li key={index}>

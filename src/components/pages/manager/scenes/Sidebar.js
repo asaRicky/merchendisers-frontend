@@ -84,6 +84,42 @@ const Sidebar = () => {
             </ListItem>
             <ListItem
               button
+              onClick={() => handleItemClick("Route Planning")}
+              selected={selected === "Route Planning"}
+              component={Link}
+              to="/routeplanning"
+            >
+              <ListItemIcon>
+                <PeopleOutlinedIcon />
+              </ListItemIcon>
+              <ListItemText primary="Route Planning" />
+            </ListItem>
+            <ListItem
+              button
+              onClick={() => handleItemClick("Reports")}
+              selected={selected === "Reports"}
+              component={Link}
+              to="/reports"
+            >
+              <ListItemIcon>
+                <ContactsOutlinedIcon />
+              </ListItemIcon>
+              <ListItemText primary="Reports" />
+            </ListItem>
+            <ListItem
+              button
+              onClick={() => handleItemClick("Settings")}
+              selected={selected === "Settings"}
+              component={Link}
+              to="/settings"
+            >
+              <ListItemIcon>
+                <ContactsOutlinedIcon />
+              </ListItemIcon>
+              <ListItemText primary="Settings" />
+            </ListItem>
+            <ListItem
+              button
               onClick={() => handleItemClick("Contacts Information")}
               selected={selected === "Contacts Information"}
               component={Link}
