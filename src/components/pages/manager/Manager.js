@@ -3,7 +3,8 @@ import Merchant from '../Merchants';
 import RoutePlanning from './RoutePlanning';
 import Reports from './Reports';
 import Settings from './Settings';
-// import Dashboard from './Dashboard';
+import Sidebar from './scenes/Sidebar';
+import Dashboard from './Dashboard';
 // import Attendance from './Attendance';
 import './Manager.css';
 
@@ -78,12 +79,13 @@ function Manager() {
           >
             {/* Your customized background elements go here */}
             {/* For example, you can add an image carousel or a weekly reports graph */}
+         <Sidebar />
           </div>
           {renderActiveFeature()}
           {/* Rest of your manager-specific UI */}
           {/* Show Merchant component to display individual merchant details */}
           <Merchant />
-          {/* <Dashboard /> */}
+          <Dashboard />
         </div>
       
     </div>
