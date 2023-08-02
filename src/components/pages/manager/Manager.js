@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Merchant from '../Merchants';
-import RoutePlanning from './RoutePlanning';
-import Reports from './Reports';
-import Settings from './Settings';
+// import RoutePlanning from './RoutePlanning';
+// import Reports from './Reports';
+// import Settings from './Settings';
 import Sidebar from './scenes/Sidebar';
 // import Attendance from './Attendance';
 import './Manager.css';
@@ -11,7 +11,7 @@ function Manager() {
  
 
   // // State variable to store the active feature to be displayed
-  const [activeFeature, setActiveFeature] = useState('dashboard');
+  // const [activeFeature, setActiveFeature] = useState('dashboard');
   // const [backgroundImageIndex, setBackgroundImageIndex] = useState(0);
 
   // Array of report images (replace with your actual report images)
@@ -33,39 +33,39 @@ function Manager() {
   
   
   // Function to handle feature selection
-  const handleFeatureSelect = (feature) => {
-    setActiveFeature(feature);
-  };
+  // const handleFeatureSelect = (feature) => {
+  //   setActiveFeature(feature);
+  // };
 
   // Render the active feature based on user selection
-  const renderActiveFeature = () => {
-    switch (activeFeature) {
-      case 'dashboard':
-        return (
-          <div className="dashboard-container">
-            {/* Render Manager's dashboard with buttons to select features */}
-            <h2>Manager's Dashboard</h2>
-            <button onClick={() => handleFeatureSelect('routePlanning')}>Route Planning</button>
-            <button onClick={() => handleFeatureSelect('reports')}>Reports</button>
-            <button onClick={() => handleFeatureSelect('settings')}>Settings</button>
-            {/* <button onClick={() => handleFeatureSelect('attendance')}>Attendance</button>
-            <button onClick={() => handleFeatureSelect('email')}>Email</button> */}
-          </div>
-        );
-      case 'routePlanning':
-        return <RoutePlanning />;
-      case 'reports':
-        return <Reports />;
-      case 'settings':
-        return <Settings />;
-      // case 'attendance':
-      //   return <Attendance />;
-      // case 'email':
-      //   return <Email />;
-      default:
-        return null;
-    }
-  };
+  // const renderActiveFeature = () => {
+  //   switch (activeFeature) {
+  //     case 'dashboard':
+  //       return (
+  //         <div className="dashboard-container">
+  //           {/* Render Manager's dashboard with buttons to select features */}
+  //           <h2>Manager's Dashboard</h2>
+  //           <button onClick={() => handleFeatureSelect('routePlanning')}>Route Planning</button>
+  //           <button onClick={() => handleFeatureSelect('reports')}>Reports</button>
+  //           <button onClick={() => handleFeatureSelect('settings')}>Settings</button>
+  //           {/* <button onClick={() => handleFeatureSelect('attendance')}>Attendance</button>
+  //           <button onClick={() => handleFeatureSelect('email')}>Email</button> */}
+  //         </div>
+  //       );
+  //     case 'routePlanning':
+  //       return <RoutePlanning />;
+  //     case 'reports':
+  //       return <Reports />;
+  //     case 'settings':
+  //       return <Settings />;
+  //     // case 'attendance':
+  //     //   return <Attendance />;
+  //     // case 'email':
+  //     //   return <Email />;
+  //     default:
+  //       return null;
+  //   }
+  // };
 
   return (
     <div className="manager-page">
@@ -80,7 +80,7 @@ function Manager() {
             {/* For example, you can add an image carousel or a weekly reports graph */}
          <Sidebar />
           </div>
-          {renderActiveFeature()}
+          {/* {renderActiveFeature()} */}
           {/* Rest of your manager-specific UI */}
           {/* Show Merchant component to display individual merchant details */}
           <Merchant />
