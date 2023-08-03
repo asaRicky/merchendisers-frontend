@@ -13,18 +13,14 @@ import {
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
 import ContactsOutlinedIcon from "@mui/icons-material/ContactsOutlined";
-// import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
-// import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
-// import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
-// import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
-// import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutlined";
-// import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
-// import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
+import AddMerchantForm from "../AddMerchantForm"; // Import the AddMerchantForm component
 
-const Sidebar = () => {
+const Sidebar = ({ handleAddMerchant }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [selected, setSelected] = useState("Dashboard");
+  const [successMessage, setSuccessMessage] = useState("");
+  const [showAddMerchantForm, setShowAddMerchantForm] = useState(false);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -35,23 +31,20 @@ const Sidebar = () => {
     setIsSidebarOpen(false);
   };
 
+  const handleAddMerchantClick = () => {
+    setShowAddMerchantForm(!showAddMerchantForm); // Toggle the visibility of the form
+    setSuccessMessage(""); 
+    console.log("merchant has been added successfully")// Clear the success message when the form is displayed or hidden
+  };
+
   return (
     <>
       <IconButton onClick={toggleSidebar} sx={{ mt: 1 }}>
         <MenuOutlinedIcon />
       </IconButton>
       <Drawer anchor="left" open={isSidebarOpen} onClose={toggleSidebar}>
-        <Box
-          sx={{
-            width: 240,
-            p: 2,
-          }}
-        >
-          <Box
-            display="flex"
-            justifyContent="space-between"
-            alignItems="center"
-          >
+        <Box sx={{ width: 240, p: 2 }}>
+          <Box display="flex" justifyContent="space-between" alignItems="center">
             <Typography variant="h5">Manager</Typography>
             <IconButton onClick={toggleSidebar}>
               <MenuOutlinedIcon />
@@ -130,8 +123,17 @@ const Sidebar = () => {
               </ListItemIcon>
               <ListItemText primary="Contacts Information" />
             </ListItem>
-            {/* Add more sidebar items here */}
           </List>
+          {/* Add Merchant button */}
+          {showAddMerchantForm ? (
+            <AddMerchantForm handleAddMerchant={handleAddMerchant} />
+          ) : (
+            <ListItem button onClick={handleAddMerchantClick}>
+              <ListItemText primary="Add Merchant" />
+            </ListItem>
+          )}
+          {/* Display success message */}
+          {successMessage && <p>{successMessage}</p>}
         </Box>
       </Drawer>
     </>
