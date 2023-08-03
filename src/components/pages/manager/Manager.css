@@ -1,0 +1,33 @@
+/* Manager.css */
+
+.manager-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0; /* Fallback background color if images/videos don't cover the entire container */
+  }
+  
+  .dashboard-and-background-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .background-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .background-container img
+  {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Add any other styles you need for other components in the Manager component */
+  

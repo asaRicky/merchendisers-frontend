@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Merchant from '../Merchants';
 // import RoutePlanning from './RoutePlanning';
 // import Reports from './Reports';
@@ -9,27 +9,26 @@ import './Manager.css';
 
 function Manager() {
  
+  const backgroundImages = [
+    'url("/manager/images/image1.jpeg")',
+  'url("/manager/images/image2.webp")',
+   // Add more image URLs here
+  ];
 
   // // State variable to store the active feature to be displayed
   // const [activeFeature, setActiveFeature] = useState('dashboard');
-  // const [backgroundImageIndex, setBackgroundImageIndex] = useState(0);
+  const [backgroundImageIndex, setBackgroundImageIndex] = useState(0);
 
-  // Array of report images (replace with your actual report images)
-  // const reportImages = [
-  //   'report_image_1.jpg',
-  //   'report_image_2.jpg',
-  //   'report_image_3.jpg',
-  //   // Add more report images here
-  // ];
+
 
   // Function to change the background image every 10 seconds
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setBackgroundImageIndex((prevIndex) => (prevIndex + 1) % reportImages.length);
-  //   }, 10000);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setBackgroundImageIndex((prevIndex) => (prevIndex + 1) % backgroundImages.length);
+    }, 15000);
   
-  //   return () => clearInterval(interval);
-  // }, [reportImages.length]); // Add reportImages.length as a dependency
+    return () => clearInterval(interval);
+  }, [backgroundImages.length]); // Add reportImages.length as a dependency
   
   
   // Function to handle feature selection
@@ -72,9 +71,9 @@ function Manager() {
     
         <div className="dashboard-and-background-container">
           <div className="background-container"
-            //  style={{
-            //   backgroundImage: `url(${reportImages[backgroundImageIndex]})`,
-            // }}
+             style={{
+              backgroundImage: `url(${backgroundImages[backgroundImageIndex]})`,
+            }}
           >
             {/* Your customized background elements go here */}
             {/* For example, you can add an image carousel or a weekly reports graph */}
