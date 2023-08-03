@@ -1,6 +1,5 @@
 import React from 'react';
 import merchandisersImage from './456.png';
-import Footer from '../Footer';
 
 
 function About() {
