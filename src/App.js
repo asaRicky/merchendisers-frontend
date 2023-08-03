@@ -9,7 +9,10 @@ import Merchants from './components/Merchants/Merchants';
 =======
 import Mechants from './components/pages/Mechants';
 import Manager from './components/pages/Manager';
+<<<<<<< HEAD
 >>>>>>> e4f4c63 (adding login component)
+=======
+>>>>>>> refs/remotes/origin/Brian
 import Login from './components/pages/Login';
 import About from './components/pages/About';
 import Contact from './components/pages/Contact';

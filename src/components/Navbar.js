@@ -14,10 +14,14 @@ const Navbar = () => {
           About
         </NavLink>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <NavLink to="/login" className="active-link">
 =======
         <NavLink to="/login" activeClassName="active-link">
 >>>>>>> e4f4c63 (adding login component)
+=======
+        <NavLink to="/login" activeClassName="active-link">
+>>>>>>> refs/remotes/origin/Brian
           Login
         </NavLink>
         <NavLink to="/merchants" className="active-link">
