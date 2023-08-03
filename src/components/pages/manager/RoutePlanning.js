@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import BarChart from './charts/BarChart';
+
 
 function RoutePlanning() {
   const [routePlans, setRoutePlans] = useState([]);
@@ -72,7 +72,7 @@ function RoutePlanning() {
 
       {/* Display the list of assigned route plans */}
       <h3>Assigned Route Plans:</h3>
-      <BarChart routePlanData={routePlans} onRoutePlanUpdate={handleRoutePlanUpdate} />
+     
       <ul>
         {routePlans.map((routePlan, index) => (
           <li key={index}>

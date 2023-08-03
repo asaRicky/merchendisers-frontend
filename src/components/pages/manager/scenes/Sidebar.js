@@ -16,7 +16,7 @@ import ContactsOutlinedIcon from "@mui/icons-material/ContactsOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import AddMerchantForm from "../AddMerchantForm"; // Import the AddMerchantForm component
 
-const Sidebar = ({ handleAddMerchant }) => {
+const Sidebar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [selected, setSelected] = useState("Dashboard");
   const [successMessage, setSuccessMessage] = useState("");
@@ -31,11 +31,39 @@ const Sidebar = ({ handleAddMerchant }) => {
     setIsSidebarOpen(false);
   };
 
-  const handleAddMerchantClick = () => {
-    setShowAddMerchantForm(!showAddMerchantForm); // Toggle the visibility of the form
-    setSuccessMessage(""); 
-    console.log("merchant has been added successfully")// Clear the success message when the form is displayed or hidden
+  const toggleAddMerchantForm = () => {
+    setShowAddMerchantForm(!showAddMerchantForm);
+    setSuccessMessage("");
   };
+
+  const handleAddMerchant = (newMerchant) => {
+    fetch("/api/merchants", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newMerchant),
+    })
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error("Failed to add merchant.");
+        }
+      })
+      .then((data) => {
+        setSuccessMessage(`Merchant ${data.name} added successfully.`);
+      })
+      .catch((error) => {
+        setSuccessMessage("Failed to add merchant.");
+      });
+  };
+  // const handleAddMerchantClick = () => {
+  //   // Call the function passed from the Manager component to add the new merchant
+  //   handleAddMerchant({ name: "John", email: "john@example.com" });
+  //   // Set the success message
+  //   setSuccessMessage("Merchant added successfully.");
+  // };
 
   return (
     <>
@@ -124,13 +152,12 @@ const Sidebar = ({ handleAddMerchant }) => {
               <ListItemText primary="Contacts Information" />
             </ListItem>
           </List>
-          {/* Add Merchant button */}
-          {showAddMerchantForm ? (
+          <ListItem button onClick={toggleAddMerchantForm}>
+            <ListItemText primary="Add Merchant" />
+          </ListItem>
+          {/* Display the AddMerchantForm if showAddMerchantForm is true */}
+          {showAddMerchantForm && (
             <AddMerchantForm handleAddMerchant={handleAddMerchant} />
-          ) : (
-            <ListItem button onClick={handleAddMerchantClick}>
-              <ListItemText primary="Add Merchant" />
-            </ListItem>
           )}
           {/* Display success message */}
           {successMessage && <p>{successMessage}</p>}
