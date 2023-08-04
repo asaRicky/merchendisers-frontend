@@ -22,7 +22,6 @@ function App() {
         {/* <Route path="/manager" element={<Manager />}/> */}
         <Route path="/merchants" element={<Merchants/>}/>
         <Route path="/login" element={<Login/>}/>
-
         <Route path="/manager" element={<Manager />}/>
         <Route path="/merchants" element={<Mechants/>}/>
         <Route path="/login" element={<Login/>}/>
