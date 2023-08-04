@@ -9,7 +9,7 @@ import Manager from './components/pages/manager/Manager';
 
 import About from './components/pages/About';
 import Contact from './components/pages/Contact';
-
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -17,7 +17,10 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/manager" element={<Manager />}/>
-        <Route path="/merchants" element={<Mechants/>}/>
+        <Route path="/merchants" element={<Merchants/>}/>
+        <Route path="/home" element={<Home/>}/>
+        <Route path="/about" element={<About/>}/>
+        <Route path="/contact" element={<Contact/>}/>
       </Routes>
 
       <Footer />
