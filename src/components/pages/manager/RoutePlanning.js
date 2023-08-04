@@ -68,6 +68,7 @@ function RoutePlanning() {
         {/* Add other form fields here */}
         
         <button type="submit">Assign Route Plan</button>
+       
       </form>
 
       {/* Display the list of assigned route plans */}
@@ -77,6 +78,7 @@ function RoutePlanning() {
         {routePlans.map((routePlan, index) => (
           <li key={index}>
             Merchant: {routePlan.merchantName}, Date: {routePlan.date}, Outlets: {routePlan.outlets}
+            <button onClick={() => handleRoutePlanUpdate(routePlan.date)}>Mark as Completed</button>
             {/* Display other route plan details here */}
           </li>
         ))}

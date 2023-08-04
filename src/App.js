@@ -7,7 +7,7 @@ import Merchants from './components/pages/Merchants';
 import Manager from './components/pages/manager/Manager';
 import About from './components/pages/About';
 import Contact from './components/pages/Contact';
-
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -20,6 +20,7 @@ function App() {
         <Route path="/login" element={<Login/>}/>
         <Route path="/manager" element={<Manager />}/>
         <Route path="/contact us" element={<Contact/>}/>
+
       </Routes>
 
       <Footer />
